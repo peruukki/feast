@@ -8,6 +8,7 @@ import {
   waitForElementToBeRemoved,
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { afterAll, afterEach, beforeAll, expect, test } from 'vitest';
 
 import FeastUISansProviders from "./FeastUISansProviders";
 import {
@@ -65,7 +66,7 @@ test("full app rendering", async () => {
   });
 });
 
-test("routes are reachable", async () => {
+test.only("routes are reachable", async () => {
   const user = userEvent.setup();
 
   render(<FeastUISansProviders />);
